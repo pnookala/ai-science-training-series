@@ -1,6 +1,6 @@
 #!/bin/bash -l
 #PBS -A ALCFAITP
-#PBS -l select=1
+#PBS -l select=4
 #PBS -N ml_in_the_loop
 #PBS -l walltime=0:30:00
 #PBS -l filesystems=home:eagle
@@ -17,4 +17,4 @@ conda activate /eagle/ALCFAITP/03-Coupling-Sim-AI/_ai4s_simAI
 export TMPDIR=/tmp
 
 echo "Running parsl ml_in_the_loop.py script"
-python ./3_ml_in_the_loop.py
+python ./ai-science-training-series/03-Coupling-Sim-AI/ml-in-the-loop/3_ml_in_the_loop.py

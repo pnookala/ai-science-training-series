@@ -26,9 +26,9 @@ np.random.seed(seed)
 random.seed(seed)
 
 # Define parameters for the workflow
-initial_training_count = 8  # Number of trianing samples to collect for first model training
-max_training_count = 24  # Maximum number of training samples to collect for training
-batch_size = 4  # Number of molecules to simulate in each iteration of active learning loop
+initial_training_count = 64  # Number of trianing samples to collect for first model training
+max_training_count = 1024  # Maximum number of training samples to collect for training
+batch_size = 64  # Number of molecules to simulate in each iteration of active learning loop
 if initial_training_count >= max_training_count:
     print("Must do at least 1 active trianing iteration.")
     print("Change the values of initial_training_count and/or max_training_count and try again.")
@@ -54,7 +54,7 @@ def combine_inferences(inputs=[]):
     return pd.concat(inputs, ignore_index=True)
 
 # Search space of molecules to sample from
-search_space = pd.read_csv('./data/QM9-search.tsv', sep=r'\s+')  # Our search space of molecules
+search_space = pd.read_csv('./ai-science-training-series/03-Coupling-Sim-AI/ml-in-the-loop/data/QM9-search.tsv', sep=r'\s+')  # Our search space of molecules
 search_space_size = len(search_space)
 
 if __name__ == "__main__":

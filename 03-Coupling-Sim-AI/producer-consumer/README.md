@@ -186,4 +186,4 @@ Please note:
 
 **Observations**
 
-Write a short paragraph on your observations based on the results collected in the table above. Which solution is best, depending on the size of data being produced and transferred and the number of nodes used? Does this match your expectations? 
+Experiments were performed on 2 nodes. Data was generated with different sizes such as 1.25 GB, 2.5GB and 5GB. Based on the performance, it appears that DragonHPC + DDict approach runs the fastest for simulation as well as training. The Parsl + file system approach errored out with larger data sizes, probably due to in-sufficient memory. I received an OS error with 2621440 requested and 0 written for one of the futures. Parsl + futures approch has higher run time for simulation as well as training, which probably is due to higher I/O communication time compare to DDict method.

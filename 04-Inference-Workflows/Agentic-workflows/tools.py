@@ -200,3 +200,31 @@ def run_mace_calculation(
         "fmax_used": fmax,
         "max_steps_used": max_steps,
     }
+
+@tool
+def find_word(data: str) -> str:
+    """
+    Count occurrences of a word inside a text.
+    Input format: "word|||text"
+    """
+    word, text = data.split("|||")
+    return f"{text.count(word)} occurrences"
+
+
+@tool
+def count_words(text: str) -> str:
+    """Return the number of words in the text."""
+    return str(len(text.split()))
+
+
+@tool
+def split_sentences(text: str) -> str:
+    """Split text into sentences separated by periods."""
+    sentences = [s.strip() for s in text.split(".") if s.strip()]
+    return str(sentences)
+
+
+@tool
+def uppercase(text: str) -> str:
+    """Convert text to uppercase."""
+    return text.upper()
